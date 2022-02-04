@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+  
+<html lang="en">
+ <head>
+   <meta charset="utf-8"/>
+   <title>Source:</title>
+   <style>
+     h1{
+       text-align: center;
+     }
+     body{
+       background-image: url("../IMG/page6.png");
+       background-position: center left;
+       background-size:1500px 2000px;
+       background-repeat: no-repeat;
+     }
+     ol{
+       font:italic 700 16px 'arial black';
+      
+     }
+   </style>
+   <script>    
+    function getCookie(cname) 
+    {
+     var name = cname + "=";
+     var ca = document.cookie.split(';');
+     for(var i=0; i<ca.length; i++)
+     {
+         var c = ca[i].trim();
+        
+         if (c.indexOf(name) == 0)
+         {
+          return c.substring(name.length, c.length);
+         }
+     }
+     return "";
+     }
+
+
+      function checkCookieTime(){
+      var ca = getCookie("cTime").split("|");
+      var timespan = ca[0];
+      var uname = ca[1];
+      var uphone=ca[2];
+      var uroom=ca[3];
+      if(timespan != ""){
+           alert((timespan/(1000)).toFixed(2).toString() + " sec.\n" +(timespan/(1000*60)).toFixed(2).toString() + " min.");        
+       }
+      
+      alert(timespan+"\n"+uname+"\n"+uphone+"\n"+uroom);
+    //  document.getElementById("noddle").innerHTML = ca[1];
+    //  document.getElementById("noddleqty").innerHTML = ca[2];
+    //  document.getElementById("appertize").innerHTML = ca[3];
+    //  document.getElementById("appertizeqty").innerHTML = ca[4];
+    //  document.getElementById("dimsum").innerHTML = ca[5];
+    //  document.getElementById("dimsumqty").innerHTML = ca[6];
+    //  document.getElementById("duck").innerHTML = ca[7];
+    //  document.getElementById("duckqty").innerHTML = ca[8];
+    //  document.getElementById("beef").innerHTML = ca[9];
+    //  document.getElementById("beefqty").innerHTML = ca[10];
+
+    }
+      function goBack()
+      {
+     parent.location.href="OrderOnline.html";
+    }
+    
+    </script>
+ </head>
+ <body onload="checkCookieTime()">
+   <h1>Display Order Information</h1>
+   <hr>
+  <!-- <p id="">time:</p>
+  <p id="noddleqty">Noddle Quanty:</p>  -->
+  
+
+  <div style="text-align:center;vertical-align:middle;">
+  <input type="button" name="getTime" value="GoBack" onclick="goBack()">
+  </div>
+ <h1>Source: </h1>
+    <br>
+    <ol>
+      <li>
+        <a href="https://www.hwcmagazine.com/recipe/spicy-shrimp-salad-with-cilantro-lime-dressing/"> Healthy World Cuisine </a>
+      </li>
+  <br>
+    <li>
+      <a href="https://www.chinasichuanfood.com/chinese-pig-ear-salad/"> China Sichuan Dish </a>
+    </li>
+    <br>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Dim_sum">wikipedia</a>
+    </li>
+    <br>
+    <li>
+      <a href="https://www.curiouscuisiniere.com/roast-peking-duck-pancakes/">curiouscuisiniere</a>
+    </li>
+
+    <br>
+    <li>
+      <a href="https://www.curiouscuisiniere.com/roast-peking-duck-pancakes/">curiouscuisiniere</a>
+    </li>
+ </body>
+</html>

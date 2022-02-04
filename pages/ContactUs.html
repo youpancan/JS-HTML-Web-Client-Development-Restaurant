@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC >
+   
+<html lang="en">
+  
+ <head>
+   <meta charset="utf-8"/>
+   <title>Contact Us</title>
+   <style type="text/css">
+body{
+  background-color: #a6a6a6;
+  text-align:center;
+}
+    
+ #section{
+border:2px solid black;
+      }
+
+.box1,.box2,.box3
+{
+
+  border:1px solid white;
+  width:32%;
+  min-width:200px;  /*need to follow width, the order can't be changed */
+  height:200px;
+  float:left;
+  
+}
+
+.box2{
+  margin:0 1% 0 1%;
+
+}
+
+.clear{
+clear:both;
+}
+ 
+   </style>
+</head>
+   <body>
+     <h1>Contact Us</h1>
+     <hr>
+     <br>
+     <h2>Our Address:</h2>
+      <img id="top" src="../IMG/Map.png" alt="map" usemap="#addressmap" />
+      <map name="addressmap"> 
+        <area shape="circle" coords="263,724,30" alt="metromap" href="#MetroAddress">
+        <area shape="circle" coords="669,409,61" alt="restmap" href="#RestAddress">         
+      </map>
+      
+      <br/><br/><br/><br/>
+<div>
+  <div class="box1">
+    <center>  <h1>Atwater Metro</h1>
+      <br/><br/><br/>
+      <h3>Address: 1500 Atwater Ave, Montreal, Quebec H3Z 1X5</h3>
+    </center>
+    </div>
+
+    <div class="box2">
+      <center>
+        <img src="../IMG/Alexis Nihon.png" width="100%" height="200px" alt="picture of Alexis Nihon"/>
+      </center>
+    </div>
+
+    <div class="box3"> 
+      <center>
+        <h3>10 min walking to our restaurant</h3>
+        <br/><br/><br/>
+        <h3><a href="#top">Go to the top</a></h3>
+        
+      </center>
+    </div>
+    <br/><br/><br id="MetroAddress"/><br/>
+  </div>
+ 
+
+  
+<div> 
+  <div class="box1">
+    <center>  <h1>Our restaurant</h1>
+      <br/><br/><br/>
+      <h3>Address:2000 Saint-Catherine St W, Montreal, Quebec H3H 2T2(i use Lasalle College as my kitchen address)</h3>     
+    </center>
+    </div>
+
+    <div class="box2">
+      <center>
+        <img src="../IMG/inside design.jpg" width="100%" height="200px" alt="picture of Mercury"/> 
+      </center>
+    </div>
+
+    <div class="box3"> 
+      <center>
+        <h3>underground of the building</h3>
+        <h3>phone:514-288-2880</h3>
+        <br/><br/><br/>
+        <h3><a href="#top">Go to the top</a></h3>
+      </center>  
+    </div>
+    </div>
+    <br/><br/><br id="RestAddress"/><br/>
+    
+   
+ 
+    <form action="#" method="post">
+   <div id="Section1">
+     <fieldset>
+<legend>Send Us A note</legend>
+  <label><b>Name  :</b></label>
+    <input type="text" id="username" name="text" size="25" maxlength="10" placeholder="Enter your name"/>
+  <br/><br/>
+  <label><b>E-mail:</b> </label>
+    <input type="email" id="email" name="email" size="25" maxlength="10" placeholder="Enter your email"/>
+    <br/><br/>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><textarea  placeholder="Your message"></textarea>
+    <br/>
+    <input type="submit" name="send me" />
+  </fieldset>
+</div>
+  </form>
+ </body>
+</html>

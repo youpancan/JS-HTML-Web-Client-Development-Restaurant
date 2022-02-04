@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC >
+   
+<html lang="en">
+ <head>
+   <meta charset="utf-8"/>
+   <title>Contact Us</title>
+   <style type="text/css">
+body{
+  background-color: #a6a6a6;
+  font-weight: 700;
+  background-image: url('../IMG/Appetizer.jpg');
+  background-position: center;
+  /* position:absolute; */
+}
+ h1{
+   text-align: center;
+ }   
+ #Section1,#Section2,#Section3
+ {
+   margin-top:10px;
+ }
+ 
+   </style>
+   <script>
+     
+     function checkPostCode()
+     {
+       var patt=/^[a-zA-Z]{1}[0-9]{1}[a-zA-Z]{1}[ ]?[0-9]{1}[a-zA-Z]{1}[0-9]{1}$/;
+  
+       var name=document.getElementById("PC").value;
+
+       if(patt.test(name)==true)
+       {
+         document.getElementById("pc2").innerHTML="Valid Post Code";
+       }
+       else
+       {
+       alert("The Post Code should contains of 3 digit and 3 letters");
+       document.getElementById("PC").innerHTML="";
+       document.getElementById("PC").focus();
+       }
+      }
+	  
+function setCookie(cname, cvalue, exdays) 
+{
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+
+
+
+var t1,t2;
+
+
+     function getT1()
+     {
+       var date1=new Date();
+           t1=date1.getTime();
+     }
+
+     function goNextPage()
+     {
+	  parent.location.href="DisplayandSource.html";
+	 }
+
+function getTime()
+{
+  var date2=new Date();
+      t2=date2.getTime();
+
+  var timespan=t2-t1;
+ 
+ //the variables belows are not stroaged by setting cookies to send to another page.
+  // var noddle=document.getElementById("noddle").value.toString();
+  // var noddleqty=document.getElementById("noddleqty").value.toString();
+  var uname=document.getElementById("username").value.toString();
+  var uphone=document.getElementById("phone").value.toString();
+  var uroom=document.getElementById("room").value.toString();
+  /* var dimsumqty=document.getElementById("dimsumqty").value.toString();
+  var duck=document.getElementById("duck").value.toString();
+  var duckqty=document.getElementById("duckqty").value.toString();
+  var beef=document.getElementById("beef").value.toString();
+  var beefqty=document.getElementById("beefqty").value.toString(); */
+
+  var valueC = timespan.toString()+"|"+uname+"|"+uphone+"|"+uroom;
+  // document.cookie="cTime="+ valueC;
+  setCookie("cTime",valueC,1);
+  // alert(getCookie("cTime"));
+  // setCookie("noddleqty",noddleqty,1);
+  // setCookie("appertize",appertize,1);
+  // setCookie("appertizeqty",appertizeqty,1);
+  // setCookie("dimsum",dimsum,1);
+  // setCookie("dimsumqty",dimsumqty,1);
+  // setCookie("duck",duck,1);
+  // setCookie("duckqty",duckqty,1);
+  // setCookie("beef",beef,1);
+  // setCookie("beefqty",beefqty,1);
+
+  // alert((timespan/(1000)).toFixed(2).toString() + " sec.\n" +(timespan/(1000*60)).toFixed(2).toString() + " min.");
+  goNextPage();
+
+	}
+
+
+ 
+   </script>
+   <body  onload="getT1()">
+     <h1>Order Online</h1>
+     <hr>
+    <form action="action_page.asp" method="post">
+
+  
+   <div id="Section1">  
+   <fieldset>
+   <legend>Order Online:</legend>
+   <input type="checkbox" id="Noddle" name="Noddle" value="Shan Xi Noddle"/> 
+   <input type="number" id="noddleqty" name="quantity" value="noddleqty" min="1" max="100"/>
+    <label for="Shan Xi Noddle">Shan Xi Noddle</label>
+    <br/>
+
+    <input type="checkbox" id="appertize"name="Appertize" value="Appertize"/>
+    <input type="number"  id="appertizeqty"name="quantity" min="1" max="100"/>
+    <label for="Appertize">Appertize</label>
+    <br/>
+    <input type="checkbox" id="dimsum" name="Dim Sum" value="Cantonese Dim Sum"/>
+    <input type="number" id="dimsumqty"  name="quantity" min="1" max="100"/>
+    <label for="Cantonese Dim Sum">Cantonese Dim Sum</label>
+    <br/>
+   
+    <input type="checkbox" id="duck"name="Duck" value="Beijing Rosted Duck"/>
+    <input type="number" id="duckqty" name="quantity" min="1" max="100"/>
+    <label for="Beijing Rosted Duck">Beijing Rosted Duck</label>
+    <br/>
+    
+    <input type="checkbox" id="Beef" name="Beef" value="SiChuan Beef"/>
+    <input type="number" id="beefqty"name="quantity" min="1" max="100"/>
+    <label for="SiChuan Beef">SiChuan Beef</label>
+    <br/>
+    <textarea></textarea>Marks
+  </div> 
+</fieldset>
+</div>
+ 
+<div id="Section2">
+  <fieldset>
+    <legend>Dilivery Information</legend>
+    <label>Name</label>
+    <br/>
+    <input type="text" id="username" name="name" size="25" maxlength="10" placeholder="Enter your name"/>
+   <br/>
+  <label>Phone</label>
+  <br/>
+    <input type="text" id="phone" name="phone" size="25" maxlength="10" placeholder="Enter your phone"/>
+   <br/>
+   <label>Room No</label>
+   <br/>
+    <input type="text" id="room" name="room"/> 
+    <br/>
+    <label>Street </label>
+    <br/>
+    <input type="text" id="street"name="street"/>
+    <br/>
+    <label>City</label>
+    <br/>
+    <input type="text" id="city" name="city" align="left"/>
+    <br/>
+    <label>Postal Code</label>
+    <br/>
+    <input type="text" id="PC" name="postal code" onchange="checkPostCode()"/>
+    <br/>
+    <textarea id="message" placeholder="Your message"></textarea>
+    <span id="pc2"></span>
+    <br/>
+ 
+  <select>
+      <option>12:00-12:30 P.M.</option>
+      <option>12:30-1:00 P.M.</option>
+      <option>1:00-1:30 P.M.</option>
+      <option>1:30-2:00 P.M.</option>
+      <option>4:00-4:30 P.M.</option>
+      <option>5:00-5:30 P.M.</option>
+      <option>5:30-6:00 P.M.</option>
+      <option>6:00-6:30 P.M.</option>
+      <option>6:30-7:00 P.M.</option>
+      <option>7:00-7:30 P.M.</option>
+      <option>7:30-8:00 P.M.</option>
+    </select>
+      <label>Dilivery Time</label>
+  </fieldset>
+</div>
+
+<div id="Section3">
+  <fieldset>
+    <legend>buttons</legend>
+    <input type="reset" name="reset" value="reset"/>
+    <input id="t2" type="submit" name="submit" value="submit" onclick="getTime()"/>
+  </fieldset>
+</div>
+<br/>
+<div style="text-align:center;vertical-align:middle;">
+<input type="button" name="next page" value="Next Page" onclick="getTime()"></input>
+</div>
+</form>
+ </body>
+</html>

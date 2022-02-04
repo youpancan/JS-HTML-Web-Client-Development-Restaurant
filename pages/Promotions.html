@@ -1,0 +1,141 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    <title>Promotions</title>
+    <style type="text/css">
+    body{
+      background-image: url("../IMG/page.png");
+      background-repeat: no-repeat;
+     /* background-color: #a6a6a6; */
+     color:black;
+     text-align:center;
+    vertical-align: middle;
+    }
+    
+    
+      
+  
+   
+#section{
+border:2px solid black;
+      }
+
+.box1,.box2,.box3
+{
+
+  border:1px solid black;
+  width:32%;
+  min-width:200px;  /*need to follow width, the order can't be changed */
+  height:300px;
+  float:left;
+  
+}
+
+.box2{
+  margin:0 1% 0 1%;
+}
+ 
+#dname{
+ 
+  
+  line-height:300px;
+  text-align: center;
+  vertical-align:center;
+}
+
+.clear{
+clear:both;
+text-align: left;
+}
+
+
+#backgroundwhite
+{
+  background-color:white;
+}
+    </style>
+    <script>
+
+      //get the name from the searchbox
+      function getMonth(namem)
+      {
+        document.getElementById("searchbox").value=namem;
+      }
+
+//use loop to search the keyword which user input
+      function searchMonth()
+      {
+var arrMonth=['july','august','september','october','november','december'];
+var arrName=['DimSum','Roster Duck','Hot Pot','ShanXi Noddle','Appetizer-Shrimp','Appetizer-Dumpling'];
+var arrImage=["../IMG/Main Dishes/DimSum.jpg","../IMG/Main Dishes/Roster Duck.jpg","../IMG/Main Dishes/Hot Pot.jfif","../IMG/Main Dishes/ShanXi Noddle.jpg","../IMG/Appertize/Shrimp.png","../IMG/Appertize/Dumpling.jpg"];
+var arrOprice=["$15","$25","$30","$10","$8.5","$7.2"];
+var arrNprice=["$14","$23","$28","$9.5","$8","$7"];
+
+var pn=document.getElementById("searchbox").value.toLowerCase();
+var index=8;
+for (i=0;i<7;i++)
+{
+  if(pn==arrMonth[i])
+  {index=i;}
+}
+if(index>=0 && index<=6)
+{
+  document.getElementById("dname").innerHTML=arrName[index];
+  document.getElementById("dimg").src=arrImage[index];
+  document.getElementById("ddetail").innerHTML="Original Price:"+arrOprice[index]+"<br/>"+ "Promotion Price ("+arrMonth[index]+"):"+arrNprice[index];
+}
+
+else{
+alert('Unknow Keyword');
+document.getElementById("dname").innerHTML="Unknown";
+document.getElementById("bimg").src=" ";
+document.getElementById("ddetail").innerHTML="Original Price: 0" +"Promotion Price( ): 0";
+}
+
+      }
+    </script>
+</head>
+<body>
+
+  <h1>Promotions</h1>
+
+  <hr>
+    <br/>
+    <div id="backgroundwhite"><img src="../IMG/monthes.png" alt="monthes" width="500" height="250" usemap="#monthes"/>
+    <map name="monthes">
+      <area shape="rect"   coords="25,146,202,40"     href="#" alt="July"      onclick="getMonth('july');searchMonth()"/>
+      <area shape="rect"   coords="521,141,840,56"    href="#" alt="August"    onclick="getMonth('august');searchMonth()"/>
+      <area shape="rect"   coords="40,287,531,206"    href="#" alt="September" onclick="getMonth('september');searchMonth()"/>
+      <area shape="rect"   coords="648,290,993,202"   href="#" alt="October"   onclick="getMonth('october');searchMonth()"/>
+      <area shape="rect"   coords="460,440,960,367"   href="#" alt="November"  onclick="getMonth('november');searchMonth()"/>
+      <area shape="rect"   coords="40,588,539,506"    href="#" alt="December"  onclick="getMonth('december');searchMonth()"/>
+    </map>
+  </div>
+    <h3>We have special discount every month, click month above to search or type below inside the searchbox </h3>
+    <br/>Enter the month you want to search:
+    <input type="text" id="searchbox"></input>
+    <br/>
+    <button type="button" onclick="searchMonth()">Search</button>
+
+
+<div>
+  <div class="box1">
+    <h1 id="dname">Name of the dish</h1>
+    </div>
+
+    <div class="box2">   
+        <img id="dimg" src="" width="100%" height="300px" alt="a picture of dish"/>
+    </div>
+
+    <div class="box3"> 
+        <h1 id="ddetail">Promotion</h1>
+        <br><br><br>
+        <h3><a class="black" href="#backgroundwhite">Go to the top</a></h3>
+    </div>
+  </div>
+
+</body>
+</html>
